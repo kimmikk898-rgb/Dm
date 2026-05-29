@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberCafe Intelligent Analytics Platform</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /*CSS START*/
+        body { 
+            font-family: 'Quicksand', sans-serif; 
+            background-color: #f7f2ea; /* Warm Soft Latte Beige */
+        }
+        h1, h2, h3, button, label, select { 
+            font-family: 'Fredoka', sans-serif; /* Soft rounded typography elements */
+        }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Premium custom scrollbar themed to match the coffee/beige tones */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #f7f2ea; }
+        ::-webkit-scrollbar-thumb { background: #ded2be; border-radius: 20px; }
+        ::-webkit-scrollbar-thumb:hover { background: #cbbba3; }
+        
+        /* Bouncy soft tab view transitions */
+        .tab-content { transition: opacity 0.25s ease-in-out; }
+        .animate-fadeIn { animation: fadeIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="text-stone-700 antialiased min-h-screen">
+
+    <div class="flex h-screen overflow-hidden">
+        
+        <aside class="w-68 bg-[#fdfbf7] border-r-2 border-[#e8dfd0] p-6 flex flex-col justify-between flex-shrink-0 z-20 shadow-sm">
+            <div class="space-y-8">
+                <div class="flex items-center gap-3 px-1 py-1">
+                    <div class="p-3 bg-[#f3eae1] text-[#a67c52] rounded-2xl shadow-sm border border-[#e5d4c0]">
+                        <i data-lucide="coffee" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-base font-bold tracking-tight text-stone-800">NetCafé AI</h1>
+                        <p class="text-[11px] text-[#b38867] font-semibold tracking-wider uppercase">Analytics Engine</p>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="block text-[11px] font-bold text-stone-400 uppercase tracking-wider pl-2 mb-1">Data Pipeline</label>
+                    
+                    <button onclick="switchTab('logs-tab')" id="btn-logs-tab" class="tab-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-xs font-semibold bg-[#ebdccb] text-[#705335] border-2 border-transparent transition-all text-left group">
+                        <i data-lucide="database" class="w-4 h-4 transition-transform group-hover:scale-105"></i> 
+                        <span>Cleansed Logs</span>
+                    </button>
+                    
+                    <button onclick="switchTab('scale-tab')" id="btn-scale-tab" class="tab-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-xs font-semibold text-stone-500 hover:text-stone-800 hover:bg-[#f5ede0] border-2 border-transparent transition-all text-left group">
+                        <i data-lucide="sliders" class="w-4 h-4 transition-transform group-hover:scale-105"></i> 
+                        <span>Feature Scaling</span>
+                    </button>
+                    
+                    <button onclick="switchTab('analytics-tab')" id="btn-analytics-tab" class="tab-btn w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-xs font-semibold text-stone-500 hover:text-stone-800 hover:bg-[#f5ede0] border-2 border-transparent transition-all text-left group">
+                        <i data-lucide="cookie" class="w-4 h-4 transition-transform group-hover:scale-105"></i> 
+                        <span>Analytics View</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t-2 border-[#e8dfd0] space-y-2">
+                <button id="downloadPdfBtn" class="w-full bg-[#c2a688] hover:bg-[#b59676] text-white font-bold text-xs py-3.5 px-4 rounded-2xl tracking-wider uppercase transition-all duration-200 flex items-center justify-center gap-2 shadow-sm active:scale-[0.97]">
+                    <i data-lucide="file-text" class="w-4 h-4"></i> Export Report PDF
+                </button>
+            </div>
+        </aside>
+
+        <main class="flex-1 overflow-y-auto p-8 relative">
+            
+            <div id="logs-tab" class="tab-content space-y-6 animate-fadeIn">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold text-stone-800 tracking-tight">Logs Ledger</h2>
+                        <p class="text-xs text-stone-400 mt-0.5">Real-time view of normalized records via clean pandas data repair pipelines.</p>
+                    </div>
+                    <div class="flex items-center gap-2 px-3 py-1.5 bg-[#f0e6d6] rounded-xl border border-[#decfa8]/40 text-xs text-[#8c6d31] font-semibold">
+                        <span class="w-2 h-2 bg-[#bda15a] rounded-full animate-pulse"></span> Pipeline Active
+                    </div>
+                </div>
+
+                <div class="bg-[#fdfbf7] rounded-3xl border-2 border-[#e8dfd0] shadow-sm overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs text-stone-600">
+                            <thead class="bg-[#f5ede0] text-stone-500 font-bold uppercase tracking-wider border-b-2 border-[#e8dfd0]">
+                                <tr>
+                                    <th class="p-4 pl-6">Session ID</th>
+                                    <th class="p-4">Customer ID</th>
+                                    <th class="p-4">Date</th>
+                                    <th class="p-4">Time</th>
+                                    <th class="p-4">Service Type</th>
+                                    <th class="p-4">Duration (min)</th>
+                                    <th class="p-4">Rate / hr</th>
+                                    <th class="p-4">Base Fee</th>
+                                    <th class="p-4">Membership</th>
+                                    <th class="p-4">Discount</th>
+                                    <th class="p-4">Final Fee</th>
+                                    <th class="p-4">Payment</th>
+                                    <th class="p-4">Pages Printed</th>
+                                    <th class="p-4">Computer #</th>
+                                    <th class="p-4">Time of Day</th>
+                                    <th class="p-4 pr-6">Lifecycle Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody" class="divide-y divide-[#edf0ec] bg-[#fdfbf7]"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="scale-tab" class="tab-content hidden space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold text-stone-800 tracking-tight">Mathematical Normalization Matrix</h2>
+                    <p class="text-xs text-stone-400 mt-0.5">Isolating target variance dimensions bounded dynamically inside a uniform range <span class="font-mono text-amber-700">[0.0000 - 1.0000]</span>.</p>
+                </div>
+
+                <div class="bg-[#fdfbf7] rounded-3xl border-2 border-[#e8dfd0] shadow-sm overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs font-mono">
+                            <thead class="bg-[#f5ede0] text-stone-500 uppercase tracking-widest border-b-2 border-[#e8dfd0]">
+                                <tr id="mlTableHead"></tr>
+                            </thead>
+                            <tbody id="mlTableBody" class="divide-y divide-[#f7f2ea] text-stone-600"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="analytics-tab" class="tab-content hidden space-y-6">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 bg-[#fdfbf7] p-5 rounded-3xl border-2 border-[#e8dfd0] shadow-sm">
+                    <div>
+                        <h2 class="text-lg font-bold text-stone-800 tracking-tight">Strategic Discovery & Advanced Modeling View</h2>
+                        <p class="text-xs text-stone-400 mt-0.5">Toggle variables below to map raw feature metrics or update algorithmic splits.</p>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-3 bg-[#f5ede0] p-2 rounded-2xl border border-[#ded2be]">
+                        <div class="flex items-center gap-2 border-r border-[#ded2be] pr-3 mr-1">
+                            <label for="analyticsViewSelect" class="text-[10px] font-bold text-stone-400 uppercase tracking-wider pl-1">Target Section:</label>
+                            <select id="analyticsViewSelect" onchange="switchAnalyticsSubView()" class="bg-[#fdfbf7] text-xs font-semibold text-stone-700 px-3 py-2 rounded-xl border border-[#e8dfd0] focus:outline-none cursor-pointer">
+                                <option value="chunk3" selected>Advanced EDA Studio</option>
+                                <option value="chunk56">K-Means Spatial Clusters</option>
+                            </select>
+                        </div>
+
+                        <div id="inlineKControls" class="flex items-center gap-3 opacity-25 pointer-events-none transition-all duration-300">
+                            <div class="flex items-center gap-2">
+                                <label for="kInput" class="text-[10px] font-bold text-stone-400 uppercase tracking-wider">Clusters (k):</label>
+                                <input id="kInput" type="number" min="2" max="8" value="3" class="w-12 bg-[#fdfbf7] border border-[#e8dfd0] rounded-xl px-2 py-1.5 text-stone-700 text-center text-xs focus:outline-none">
+                            </div>
+                            <button id="updateModelBtn" class="bg-[#ebdccb] hover:bg-[#dfcdba] text-[#5c432a] font-bold text-[10px] tracking-wider uppercase py-2 px-4 rounded-xl transition-all flex items-center gap-1.5 active:scale-95 shadow-sm">
+                                <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Update Model
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="subView-chunk3" class="space-y-6 animate-fadeIn">
+                    <div class="bg-[#fdfbf7] p-6 rounded-3xl border-2 border-[#e8dfd0] shadow-sm space-y-5">
+                        
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-[#f5ede0] pb-4">
+                            <h3 class="text-xs font-bold uppercase text-stone-400 tracking-wider flex items-center gap-2">
+                                <i data-lucide="bar-chart-3" class="w-4 h-4 text-[#ab9476]"></i> Dynamic Exploration Workspace
+                            </h3>
+                            
+                            <div class="flex flex-wrap items-center gap-2.5">
+                                <div class="flex items-center gap-2 text-xs bg-[#f5ede0] px-3 py-2 rounded-xl border border-[#e8dfd0]">
+                                    <span class="text-stone-500 font-medium">Variable:</span>
+                                    <select id="eda_column_select" onchange="loadEdaDistribution()" class="bg-transparent text-stone-800 font-semibold outline-none cursor-pointer">
+                                        <option value="serviceType">Service Category Type</option>
+                                        <option value="paymentMethod">Payment Channels Used</option>
+                                        <option value="membershipType">Membership Status Tiers</option>
+                                        <option value="time_of_day">Time of Day Logged</option>
+                                        <option value="durationMinutes">Session Length (Minutes)</option>
+                                        <option value="finalFee">Billing Aggregates (Fee)</option>
+                                        <option value="pagesPrinted">Volume Pages Printed</option>
+                                    </select>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs bg-[#f5ede0] px-3 py-2 rounded-xl border border-[#e8dfd0]">
+                                    <span class="text-stone-500 font-medium">Style:</span>
+                                    <select id="eda_style_select" onchange="loadEdaDistribution()" class="bg-transparent text-stone-800 font-semibold outline-none cursor-pointer">
+                                        <option value="bar">Distribution Bar Chart</option>
+                                        <option value="pie">Share Composition Pie Chart</option>
+                                        <option value="histogram">Continuous Density Histogram</option>
+                                        <option value="scatter">Multi-Variable Scatter View</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="h-[380px] w-full relative px-2">
+                            <canvas id="edaDistributionChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#fdfbf7] p-6 rounded-3xl border-2 border-[#e8dfd0] shadow-sm space-y-4">
+                        <h3 class="text-xs font-bold uppercase text-stone-400 tracking-wider flex items-center gap-2">
+                            <i data-lucide="grid" class="w-4 h-4 text-[#ba9f7d]"></i> Operational Attribute Correlation Grid Matrix
+                        </h3>
+                        <div class="overflow-hidden rounded-2xl border border-[#e8dfd0]">
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left text-xs font-mono">
+                                    <thead id="corrHead" class="bg-[#f5ede0] text-stone-500 uppercase tracking-wider font-bold border-b border-[#e8dfd0]"></thead>
+                                    <tbody id="corrBody" class="divide-y divide-[#f5ede0] text-center bg-[#fdfbf7]"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="subView-chunk56" class="hidden grid grid-cols-1 xl:grid-cols-2 gap-6 animate-fadeIn">
+                    <div class="bg-[#fdfbf7] p-6 rounded-3xl border-2 border-[#e8dfd0] shadow-sm space-y-4">
+                        <h3 class="text-xs font-bold uppercase text-stone-400 tracking-wider flex items-center gap-2">
+                            <i data-lucide="git-commit" class="w-4 h-4 text-[#bfa481]"></i> Chunk 5: Elbow Optimization Curve
+                        </h3>
+                        <div class="h-[340px] relative"><canvas id="elbowCurveChart"></canvas></div>
+                    </div>
+                    <div class="bg-[#fdfbf7] p-6 rounded-3xl border-2 border-[#e8dfd0] shadow-sm space-y-4">
+                        <h3 class="text-xs font-bold uppercase text-stone-400 tracking-wider flex items-center gap-2">
+                            <i data-lucide="shapes" class="w-4 h-4 text-[#bfa481]"></i> Segment Projections & Centroids
+                        </h3>
+                        <div class="h-[340px] relative"><canvas id="scatterClusterChart"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+/* JS START */
+    <script>
+        let charts = {};
+
+        // Global Cozy / Beige Chart.js Visual Customizations
+        Chart.defaults.color = '#7c7267';
+        Chart.defaults.font.family = "'Quicksand', sans-serif";
+        Chart.defaults.plugins.legend.labels.boxWidth = 14;
+        Chart.defaults.plugins.legend.labels.padding = 16;
+
+        // Soft earthy pastel color collection matching the beige palette
+        const softBeigePalette = [
+            'rgba(189, 161, 130, 0.85)',  // Warm Latte
+            'rgba(214, 193, 169, 0.85)',  // Light Cream/Almond
+            'rgba(150, 166, 145, 0.85)',  // Earthy Sage Green
+            'rgba(219, 178, 160, 0.85)',  // Terracotta Rose
+            'rgba(168, 161, 184, 0.85)'   // Muted Dusty Lavender
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            loadCleanDataLogs();
+            loadEdaDistribution();
+            loadEdaCorrelationMatrix();
+            loadFeaturePipelineScale();
+            executeKMeansClusteringWorkspace();
+
+            document.getElementById('updateModelBtn').addEventListener('click', executeKMeansClusteringWorkspace);
+            document.getElementById('downloadPdfBtn').addEventListener('click', generateExportPdfReport);
+        });
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(tabId).classList.remove('hidden');
+            
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-[#ebdccb]', 'text-[#705335]');
+                btn.classList.add('text-stone-500', 'hover:text-stone-800', 'hover:bg-[#f5ede0]');
+            });
+            
+            const targetBtn = document.getElementById(`btn-${tabId}`);
+            if(targetBtn) {
+                targetBtn.classList.add('bg-[#ebdccb]', 'text-[#705335]');
+                targetBtn.classList.remove('text-stone-500', 'hover:text-stone-800', 'hover:bg-[#f5ede0]');
+            }
+        }
+
+        function switchAnalyticsSubView() {
+            const currentSubView = document.getElementById('analyticsViewSelect').value;
+            const modelConfigPanel = document.getElementById('inlineKControls');
+
+            if(currentSubView === 'chunk3') {
+                document.getElementById('subView-chunk3').classList.remove('hidden');
+                document.getElementById('subView-chunk56').classList.add('hidden');
+                modelConfigPanel.classList.add('opacity-25', 'pointer-events-none');
+            } else {
+                document.getElementById('subView-chunk3').classList.add('hidden');
+                document.getElementById('subView-chunk56').classList.remove('hidden');
+                modelConfigPanel.classList.remove('opacity-25', 'pointer-events-none');
+            }
+        }
+
+        async function loadCleanDataLogs() {
+            try {
+                const response = await fetch('/api/clean-data');
+                const data = await response.json();
+                const tbody = document.getElementById('tableBody');
+                if(!tbody || !data) return;
+                tbody.innerHTML = '';
+                
+                data.forEach(row => {
+                    tbody.innerHTML += `
+                        <tr class="hover:bg-[#fbf9f4] transition-colors duration-150">
+                            <td class="p-4 pl-6 font-mono text-[#a4815c] font-medium">${row.session_id}</td>
+                            <td class="p-4 text-stone-500 font-mono text-[11px]">${row.customer_id}</td>
+                            <td class="p-4 text-stone-500">${row.date || ''}</td>
+                            <td class="p-4 text-stone-500">${row.time || ''}</td>
+                            <td class="p-4 text-stone-700 font-medium">${row.service_type}</td>
+                            <td class="p-4 font-mono text-stone-600">${parseFloat(row.durationMinutes || 0).toFixed(1)}</td>
+                            <td class="p-4 font-mono text-stone-600">${row.rate_per_hour !== '' && row.rate_per_hour != null ? parseFloat(row.rate_per_hour).toFixed(2) : '-'}</td>
+                            <td class="p-4 font-mono text-stone-600">₱${row.base_fee !== '' && row.base_fee != null ? parseFloat(row.base_fee).toFixed(2) : '-'}</td>
+                            <td class="p-4 text-stone-600">${row.membershipType || ''}</td>
+                            <td class="p-4 font-mono text-stone-600">${row.discount_rate !== '' && row.discount_rate != null ? (parseFloat(row.discount_rate)*100).toFixed(0)+'%' : '-'}</td>
+                            <td class="p-4 text-stone-800 font-semibold font-mono">₱${parseFloat(row.final_fee || 0).toFixed(2)}</td>
+                            <td class="p-4 text-stone-500">${row.payment_method}</td>
+                            <td class="p-4 font-mono text-stone-600">${parseFloat(row.pagesPrinted || 0).toFixed(0)}</td>
+                            <td class="p-4 font-mono text-stone-600">${row.computer_number !== '' && row.computer_number != null ? parseFloat(row.computer_number).toFixed(0) : '-'}</td>
+                            <td class="p-4 text-stone-500">${row.time_of_day || ''}</td>
+                            <td class="p-4 pr-6">
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 text-[11px] font-bold rounded-xl border tracking-wide ${row.session_status === 'Completed' ? 'bg-[#ebf0e9] text-[#55704a] border-[#d4decb]' : 'bg-[#f5ebd7] text-[#856a38] border-[#ebd9be]'}">
+                                    <span class="w-1.5 h-1.5 rounded-full ${row.session_status === 'Completed' ? 'bg-[#739468]' : 'bg-[#ab8b4e]'}"></span>
+                                    ${row.session_status}
+                                </span>
+                            </td>
+                        </tr>`;
+                });
+            } catch (err) { console.error("Data tracking table extraction failed:", err); }
+        }
+
+        async function loadEdaDistribution() {
+            try {
+                const selectedVariable = document.getElementById('eda_column_select').value;
+                const activeStyle = document.getElementById('eda_style_select').value;
+                
+                const response = await fetch('/api/analytics/chart', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({column: selectedVariable, chart_type: activeStyle})
+                });
+                const payload = await response.json();
+                if(charts.eda) charts.eda.destroy();
+                
+                const ctx = document.getElementById('edaDistributionChart').getContext('2d');
+                let config = {
+                    type: activeStyle === 'pie' ? 'doughnut' : (activeStyle === 'scatter' ? 'scatter' : 'bar'),
+                    data: {},
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: activeStyle === 'pie' } }
+                    }
+                };
+
+                if (activeStyle === 'scatter') {
+                    config.data = {
+                        datasets: [{
+                            label: `Data Matrix (${payload.x_axis_title} vs ${payload.y_axis_title})`,
+                            data: payload.scatter_data,
+                            backgroundColor: 'rgba(189, 161, 130, 0.85)',
+                            borderColor: '#a38463',
+                            borderWidth: 2,
+                            pointRadius: 6,
+                            hoverPointRadius: 8
+                        }]
+                    };
+                    config.options.scales = {
+                        x: { title: { display: true, text: payload.x_axis_title, color: '#a1968a' }, grid: { color: '#e8dfd0' } },
+                        y: { title: { display: true, text: payload.y_axis_title, color: '#a1968a' }, grid: { color: '#e8dfd0' } }
+                    };
+                } else {
+                    config.data = {
+                        labels: payload.labels,
+                        datasets: [{
+                            label: 'Session Metric Matrix Data Units',
+                            data: payload.values,
+                            backgroundColor: activeStyle === 'pie' ? softBeigePalette : 'rgba(189, 161, 130, 0.85)',
+                            borderColor: activeStyle === 'pie' ? '#fdfbf7' : '#9c8164',
+                            borderWidth: 2,
+                            borderRadius: activeStyle === 'pie' ? 0 : 8,
+                            maxBarThickness: 40
+                        }]
+                    };
+                    config.options.scales = activeStyle === 'pie' ? {} : {
+                        x: { grid: { display: false } },
+                        y: { grid: { color: '#e8dfd0' } }
+                    };
+                }
+                
+                charts.eda = new Chart(ctx, config);
+            } catch (err) { console.error("EDA Rendering failure:", err); }
+        }
+
+        async function loadEdaCorrelationMatrix() {
+            try {
+                const response = await fetch('/api/analytics/correlation');
+                const data = await response.json();
+                
+                const tableHeader = document.getElementById('corrHead');
+                const tableBody = document.getElementById('corrBody');
+                if(!tableHeader || !tableBody) return;
+
+                let rowHeaderHtml = `<tr><th class="p-4 text-left text-stone-500 font-bold bg-[#f5ede0]">Metric Attributes</th>`;
+                data.columns.forEach(col => { rowHeaderHtml += `<th class="p-4 text-center">${col}</th>`; });
+                tableHeader.innerHTML = rowHeaderHtml + `</tr>`;
+
+                tableBody.innerHTML = '';
+                data.matrix.forEach((matrixRows, rIdx) => {
+                    let matrixCellsHtml = `<tr class="hover:bg-[#fbf9f4] border-b border-[#e8dfd0]"><td class="p-4 text-left font-bold text-stone-700 bg-[#f5ede0]/40">${data.columns[rIdx]}</td>`;
+                    matrixRows.forEach(val => {
+                        let colorProfile = val === 1 ? 'text-[#87623a] font-bold' : (Math.abs(val) > 0.4 ? 'text-[#59784e] font-semibold' : 'text-stone-500');
+                        matrixCellsHtml += `<td class="p-4 ${colorProfile}">${val.toFixed(4)}</td>`;
+                    });
+                    tableBody.innerHTML += matrixCellsHtml + `</tr>`;
+                });
+            } catch (err) { console.error("Correlation processing grid failure:", err); }
+        }
+
+        async function loadFeaturePipelineScale() {
+            try {
+                const response = await fetch('/api/analytics/features', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({scaler: 'minmax'})
+                });
+                
+                // FIXED: Adjusted code here to properly use the unified data response payload 
+                const data = await response.json();
+                const headTr = document.getElementById('mlTableHead');
+                const tbody = document.getElementById('mlTableBody');
+                
+                if(headTr && tbody) {
+                    headTr.innerHTML = '<th class="p-4 font-bold text-stone-500 bg-[#f5ede0]">#</th>';
+                    data.headers.forEach(h => {
+                        headTr.innerHTML += `<th class="p-4 font-bold text-stone-500 bg-[#f5ede0]">${h} (raw)</th>`;
+                        headTr.innerHTML += `<th class="p-4 font-bold text-[#87623a] bg-[#f5ede0]">${h} (scaled)</th>`;
+                    });
+                    
+                    tbody.innerHTML = '';
+                    data.raw.slice(0, 11).forEach((rawRow, i) => {
+                        const scaledRow = data.scaled[i];
+                        let rowHtml = `<tr class="hover:bg-[#fbf9f4] transition-all"><td class="p-4 text-stone-400 font-mono text-[11px]">${i + 1}</td>`;
+                        data.headers.forEach(h => {
+                            rowHtml += `<td class="p-4 font-mono text-[13px] text-stone-600">${parseFloat(rawRow[h]).toFixed(4)}</td>`;
+                            rowHtml += `<td class="p-4 font-mono text-[13px] text-[#87623a] font-semibold">${parseFloat(scaledRow[h]).toFixed(4)}</td>`;
+                        });
+                        tbody.innerHTML += rowHtml + `</tr>`;
+                    });
+                }
+            } catch (err) { console.error("Feature scaling data visualization rendering failed:", err); }
+        }
+
+        async function executeKMeansClusteringWorkspace() {
+            try {
+                const totalClustersK = document.getElementById('kInput').value;
+                const metricsResponse = await fetch('/api/analytics/clustering-metrics');
+                const metricsPayload = await metricsResponse.json();
+                
+                if(charts.elbow) charts.elbow.destroy();
+                const ctxElbow = document.getElementById('elbowCurveChart').getContext('2d');
+                charts.elbow = new Chart(ctxElbow, {
+                    type: 'line',
+                    data: {
+                        labels: metricsPayload.k_values,
+                        datasets: [{ 
+                            label: 'Inertia Metric Curve', 
+                            data: metricsPayload.inertia, 
+                            borderColor: '#ad9174', 
+                            backgroundColor: 'rgba(214, 193, 169, 0.2)', 
+                            fill: true,
+                            tension: 0.2,
+                            pointRadius: 5
+                        }]
+                    },
+                    options: { 
+                        responsive: true, 
+                        maintainAspectRatio: false,
+                        scales: { x: { grid: { color: '#e8dfd0' } }, y: { grid: { color: '#e8dfd0' } } }
+                    }
+                });
+
+                const clusterResponse = await fetch('/api/analytics/kmeans', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({k: totalClustersK})
+                });
+                const dataCluster = await clusterResponse.json();
+                
+                // Build label map from summary (archetype names per cluster)
+                const clusterLabelMap = {};
+                (dataCluster.summary || []).forEach(s => {
+                    clusterLabelMap[String(s.cluster)] = s.label || `Cluster ${s.cluster}`;
+                });
+
+                const plottedDatasets = [];
+                Object.keys(dataCluster.clusters).forEach((cIdx) => {
+                    const archetypeLabel = clusterLabelMap[cIdx] || `Cluster ${cIdx}`;
+                    plottedDatasets.push({
+                        label: archetypeLabel,
+                        data: dataCluster.clusters[cIdx],
+                        backgroundColor: softBeigePalette[cIdx % softBeigePalette.length],
+                        pointRadius: 6,
+                        borderWidth: 0
+                    });
+                });
+                
+                plottedDatasets.push({
+                    label: 'Geometric Centroids',
+                    data: dataCluster.centroids,
+                    backgroundColor: '#cc6a5c',
+                    borderColor: '#fdfbf7',
+                    borderWidth: 2.5,
+                    pointRadius: 11,
+                    pointStyle: 'rectRot'
+                });
+
+                if(charts.scatter) charts.scatter.destroy();
+                const ctxScatter = document.getElementById('scatterClusterChart').getContext('2d');
+                charts.scatter = new Chart(ctxScatter, {
+                    type: 'scatter',
+                    data: { datasets: plottedDatasets },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: { title: { display: true, text: 'Session Length (Minutes)', color: '#a1968a' }, grid: { color: '#e8dfd0' } },
+                            y: { title: { display: true, text: 'Final Revenue Aggregate (₱)', color: '#a1968a' }, grid: { color: '#e8dfd0' } }
+                        }
+                    }
+                });
+            } catch (err) { console.error(err); }
+        }
+
+        async function generateExportPdfReport() {
+            const chosenK = document.getElementById('kInput').value;
+            const pdfButton = document.getElementById('downloadPdfBtn');
+            const cachedTemplateHtml = pdfButton.innerHTML;
+            try {
+                pdfButton.disabled = true; 
+                pdfButton.innerHTML = `<i data-lucide="loader" class="w-4 h-4 animate-spin"></i> Building...`;
+                lucide.createIcons();
+                
+                const response = await fetch('/api/export/pdf', {
+                    method: 'POST',
+                    headers: {'Content-Type':'application/json'},
+                    body: JSON.stringify({k: chosenK})
+                });
+                
+                const blobFile = await response.blob();
+                const blobObjectUrl = window.URL.createObjectURL(blobFile);
+                const shadowDownloadAnchor = document.createElement('a'); 
+                shadowDownloadAnchor.href = blobObjectUrl; 
+                shadowDownloadAnchor.download = `internet_cafe_cluster_report_k${chosenK}.pdf`;
+                document.body.appendChild(shadowDownloadAnchor); 
+                shadowDownloadAnchor.click(); 
+                shadowDownloadAnchor.remove();
+            } catch (err) { 
+                alert("Programmatic report serialization processing failure."); 
+            } finally { 
+                pdfButton.disabled = false; 
+                pdfButton.innerHTML = cachedTemplateHtml; 
+                lucide.createIcons(); 
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+sessionId,customer_id,date,time,serviceType,durationMinutes,rate_per_hour,base_fee,membershipType,discount_rate,finalFee,paymentMethod,pagesPrinted,computer_number,time_of_day,sessionStatus
+SES-0001,CUST-015,1/7/2024,15:15,Browsing,86,,21.5,Student,,20.43,Cash,0,19,Afternoon,COMPLETED
+SES-0002,CUST-055,1/9/2024,7:05,BROWSING,,15,33.5,Student,0.05,31.82,Cash,,18,Morning,Completed
+SES-0003,CUST-054,2/26/2024,21:37,printing,18,10,3,Student,0.05,2.85,nan,,,Evening,
+SES-0004,CUST-020,2/25/2024,17:06,Gaming,209,,87.08,Regular,0,87.08,Maya,0,,Evening,completed
+SES-0005,CUST-034,1/12/2024,,Gaming,208,25,,Regular,0,86.67,Maya,0,19,Evening,COMPLETED
+SES-0006,CUST-025,6/29/2024,9:02,Online Class,131,15,32.75,Member,0.1,29.48,,0,,,Completed
+SES-0007,CUST-049,3/12/2024,21:40,DOWNLOADING,201,,67,Regular,0,67,,0,,Evening,COMPLETED
+SES-0008,CUST-035,6/28/2024,,online class,102,15,25.5,Student,,24.22,GCash,0,15,Morning,
+SES-0009,CUST-049,3/10/2024,,printing,43,10,7.17,Regular,0,7.17,Maya,8,9,Afternoon,incomplete
+SES-0010,CUST-009,2/24/2024,17:13,Online Class,,,,Member,0.1,60.75,Credit Card,0,9,Evening,COMPLETED
+SES-0011,CUST-018,3/4/2024,15:47,Video Streaming,234,20,78,,,74.1,,0,8,Afternoon,
+SES-0012,CUST-018,5/10/2024,22:05,Downloading,,20,13,Regular,0,13,GCash,,14,Evening,completed
+SES-0013,CUST-077,1/17/2024,19:24,Video Streaming,254,20,84.67,Student,,,Maya,,4,,completed
+SES-0014,CUST-069,3/9/2024,17:07,Printing,237,10,,Member,0.1,35.55,Cash,6,,Evening,Completed
+SES-0015,CUST-023,5/9/2024,,online class,167,15,41.75,Student,0.05,39.66,nan,0,12,Morning,completed
+SES-0016,CUST-021,5/18/2024,7:38,Printing,265,10,44.17,Regular,0,44.17,,1,8,Morning,completed
+SES-0017,CUST-008,3/2/2024,9:05,ONLINE CLASS,,15,,Regular,0,65.75,GCash,0,16,Morning,completed
+SES-0018,CUST-071,2/12/2024,,Downloading,231,,,Regular,0,77,,0,13,Afternoon,Completed
+SES-0019,CUST-048,4/22/2024,21:07,BROWSING,130,15,32.5,Regular,0,32.5,Maya,0,19,,completed
+SES-0020,CUST-071,2/28/2024,14:00,GAMING,45,,18.75,Regular,0,18.75,Cash,0,11,Afternoon,COMPLETED
+SES-0021,CUST-010,5/11/2024,14:17,ONLINE CLASS,263,,65.75,Regular,0,65.75,GCash,0,8,,
+SES-0022,CUST-061,4/14/2024,,Gaming,,25,97.92,Member,0.1,88.13,Credit Card,0,15,Afternoon,Incomplete
+SES-0023,CUST-007,6/21/2024,10:03,Scanning,188,10,31.33,Regular,0,31.33,GCash,,18,Morning,completed
+SES-0024,CUST-058,2/5/2024,20:11,,251,10,,,0,41.83,,,2,Evening,
+SES-0025,CUST-070,1/4/2024,9:59,Downloading,136,20,45.33,,,,Credit Card,0,16,Morning,
+SES-0026,CUST-028,4/12/2024,8:10,Scanning,,10,2.67,Member,0.1,2.4,Credit Card,13,14,Morning,Completed
+SES-0027,CUST-072,6/18/2024,22:09,Browsing,166,15,,Regular,0,41.5,nan,0,,Evening,completed
+SES-0028,CUST-008,1/13/2024,22:32,Downloading,,,95.33,Regular,0,95.33,Cash,0,6,Evening,Completed
+SES-0029,CUST-009,6/1/2024,9:43,Downloading,135,,45,Member,0.1,40.5,Cash,,19,Morning,Completed
+SES-0030,CUST-077,1/11/2024,9:26,Online Class,282,15,70.5,Member,0.1,63.45,Maya,0,11,Morning,Completed
+SES-0031,CUST-031,3/8/2024,19:08,,168,15,,Member,0.1,,,0,,Evening,
+SES-0032,CUST-059,6/8/2024,,Video Streaming,124,20,41.33,Student,0.05,39.26,Maya,0,,Morning,
+SES-0033,CUST-009,3/3/2024,18:18,Browsing,239,15,59.75,Student,0.05,56.76,Maya,,18,Evening,
+SES-0034,CUST-039,6/18/2024,10:56,browsing,150,15,,Regular,0,37.5,,0,9,Morning,Completed
+SES-0035,CUST-037,6/3/2024,13:45,,119,,19.83,Student,0.05,18.84,nan,9,2,Afternoon,Completed
+SES-0036,CUST-012,6/11/2024,20:53,Printing,37,10,6.17,Member,0.1,5.55,GCash,1,6,Evening,Completed
+SES-0037,CUST-057,5/21/2024,20:35,Gaming,,25,,Regular,0,30,GCash,0,12,Evening,completed
+SES-0038,CUST-075,5/21/2024,11:27,Browsing,36,15,9,Member,0.1,8.1,,0,12,Morning,completed
+SES-0039,CUST-027,6/23/2024,14:42,Gaming,196,25,81.67,Student,0.05,77.59,Credit Card,0,,Afternoon,
+SES-0040,CUST-021,2/15/2024,20:01,Browsing,185,15,46.25,,0.1,41.62,GCash,0,6,Evening,Completed
+SES-0041,CUST-014,4/7/2024,8:54,Scanning,,10,21.33,,0.1,19.2,Maya,7,8,,COMPLETED
+SES-0042,CUST-029,1/7/2024,13:25,PRINTING,157,10,26.17,Member,,23.55,nan,3,18,Afternoon,Incomplete
+SES-0043,CUST-043,1/8/2024,10:56,PRINTING,106,10,,Member,0.1,15.9,Cash,19,20,Morning,Completed
+SES-0044,CUST-056,3/29/2024,17:27,Video Streaming,276,20,92,Regular,,92,,0,9,Evening,Completed
+SES-0045,CUST-006,4/21/2024,7:33,Downloading,290,20,,Student,0.05,91.84,GCash,0,14,Morning,completed
+SES-0046,CUST-009,6/19/2024,17:39,printing,,,13,Student,0.05,,Maya,10,11,Evening,incomplete
+SES-0047,CUST-052,6/27/2024,16:35,Browsing,113,15,28.25,Member,0.1,25.43,Credit Card,0,20,,completed
+SES-0048,CUST-073,3/18/2024,19:35,DOWNLOADING,15,20,5,Member,0.1,4.5,Maya,0,,Evening,completed
+SES-0049,CUST-075,6/4/2024,,Scanning,241,10,40.17,Student,0.05,,Credit Card,7,3,Evening,
+SES-0050,CUST-037,5/11/2024,17:05,Downloading,135,20,45,Student,0.05,42.75,Maya,0,7,Evening,COMPLETED
+SES-0051,CUST-019,1/7/2024,8:15,Scanning,52,10,8.67,,0.1,7.8,nan,,16,Morning,Incomplete
+SES-0052,CUST-052,3/3/2024,11:41,Online Class,17,15,4.25,Regular,0,4.25,nan,0,6,,completed
+SES-0053,CUST-067,4/28/2024,8:35,Browsing,,15,19.25,Member,0.1,17.32,GCash,0,,Morning,Incomplete
+SES-0054,CUST-072,6/1/2024,17:48,Scanning,273,,45.5,Student,,43.23,Credit Card,,16,Evening,completed
+SES-0055,CUST-058,3/7/2024,,Online Class,156,15,,Student,0.05,37.05,,0,9,Afternoon,Completed
+SES-0056,CUST-057,1/20/2024,16:15,printing,186,10,31,Student,0.05,29.45,Cash,11,,Afternoon,completed
+SES-0057,CUST-030,4/8/2024,11:45,Browsing,47,15,11.75,Member,0.1,10.58,Credit Card,0,18,Morning,Completed
+SES-0058,CUST-060,4/16/2024,8:13,Downloading,230,20,76.67,,0.1,69,Cash,0,16,Morning,
+SES-0059,CUST-001,3/31/2024,16:48,SCANNING,,10,38.17,Student,0.05,36.26,GCash,18,,Afternoon,INCOMPLETE
+SES-0060,CUST-035,4/21/2024,22:01,SCANNING,187,10,31.17,Student,0.05,29.61,GCash,13,5,Evening,Incomplete
+SES-0061,CUST-080,5/16/2024,7:58,,28,10,4.67,Student,0.05,4.44,Credit Card,3,15,Morning,
+SES-0062,CUST-024,1/13/2024,15:24,Printing,,10,20.5,Member,0.1,18.45,nan,15,9,Afternoon,Incomplete
+SES-0063,CUST-054,3/5/2024,9:30,Gaming,291,25,,Regular,0,121.25,Maya,0,3,Morning,COMPLETED
+SES-0064,CUST-006,1/8/2024,,downloading,,20,8.33,Student,0.05,,GCash,0,5,Afternoon,COMPLETED
+SES-0065,CUST-061,6/20/2024,10:36,Browsing,253,15,63.25,Student,0.05,60.09,Maya,,6,,COMPLETED
+SES-0066,CUST-078,6/4/2024,,Downloading,98,20,32.67,Member,0.1,29.4,Cash,0,,Morning,Completed
+SES-0067,CUST-074,6/22/2024,19:25,Online Class,116,15,29,Regular,0,29,GCash,0,10,Evening,
+SES-0068,CUST-077,1/31/2024,8:22,Video Streaming,234,20,78,Student,,74.1,Maya,0,17,Morning,Completed
+SES-0069,CUST-044,1/4/2024,20:52,Scanning,69,10,11.5,Member,0.1,10.35,Credit Card,14,14,Evening,Completed
+SES-0070,CUST-023,5/13/2024,15:39,Downloading,,20,96.67,Member,0.1,87,,0,19,Afternoon,incomplete
+SES-0071,CUST-035,3/23/2024,14:53,Gaming,157,25,65.42,Member,,58.88,GCash,,,Afternoon,INCOMPLETE
+SES-0072,CUST-079,6/20/2024,19:21,GAMING,,,,Member,0.1,100.5,GCash,0,7,Evening,incomplete
+SES-0073,CUST-046,3/7/2024,17:17,,156,20,52,,0.05,,nan,0,3,Evening,Completed
+SES-0074,CUST-031,4/14/2024,,Downloading,,20,46,Student,0.05,43.7,Credit Card,0,15,Evening,INCOMPLETE
+SES-0075,CUST-003,1/24/2024,16:14,scanning,,10,23.17,Student,0.05,22.01,Maya,10,18,Afternoon,
+SES-0076,CUST-068,3/29/2024,20:47,Video Streaming,184,,,Member,0.1,55.2,nan,0,10,,
+SES-0077,CUST-033,2/29/2024,10:46,Browsing,176,15,44,Regular,0,44,nan,0,7,Morning,
+SES-0078,CUST-062,3/11/2024,16:06,DOWNLOADING,114,20,,Member,0.1,34.2,GCash,0,6,Afternoon,COMPLETED
+SES-0079,CUST-039,1/4/2024,11:17,Gaming,,25,17.5,,0.05,16.62,Maya,0,16,Morning,Completed
+SES-0080,CUST-014,1/4/2024,16:30,Scanning,,,40,Regular,,40,Cash,11,16,,
+SES-0081,CUST-015,1/17/2024,19:31,gaming,42,25,17.5,Regular,0,17.5,GCash,0,3,Evening,completed
+SES-0082,CUST-032,1/31/2024,20:38,,130,,43.33,Student,0.05,41.16,Credit Card,0,15,Evening,Incomplete
+SES-0083,CUST-039,5/30/2024,20:19,VIDEO STREAMING,45,20,15,Student,,14.25,nan,0,7,,Completed
+SES-0084,CUST-034,6/18/2024,9:10,Browsing,103,15,25.75,Student,,24.46,Cash,0,1,Morning,COMPLETED
+SES-0085,CUST-053,4/25/2024,22:18,Gaming,,25,55.42,Member,0.1,49.88,Maya,,3,Evening,Incomplete
+SES-0086,CUST-030,3/8/2024,13:27,gaming,293,25,122.08,Regular,0,122.08,nan,0,5,Afternoon,Completed
+SES-0087,CUST-010,1/16/2024,,Printing,162,10,27,Regular,0,27,Credit Card,15,,Afternoon,
+SES-0088,CUST-035,5/8/2024,22:28,Gaming,35,25,14.58,Member,0.1,13.12,Maya,0,1,,Completed
+SES-0089,CUST-012,2/28/2024,,Online Class,152,15,38,Student,0.05,36.1,Cash,0,16,Morning,completed
+SES-0090,CUST-067,6/15/2024,21:58,printing,107,10,,Member,0.1,16.05,Credit Card,19,16,Evening,COMPLETED
+SES-0091,CUST-045,4/14/2024,17:20,Online Class,68,15,17,Regular,,17,,0,16,Evening,INCOMPLETE
+SES-0092,CUST-037,6/18/2024,19:52,DOWNLOADING,,20,98.67,Regular,0,98.67,Credit Card,,11,Evening,completed
+SES-0093,CUST-033,3/23/2024,10:49,Scanning,278,10,46.33,Student,0.05,44.01,Credit Card,1,2,Morning,
+SES-0094,CUST-025,5/12/2024,18:39,Downloading,270,20,90,Student,0.05,85.5,Credit Card,0,7,Evening,COMPLETED
+SES-0095,CUST-035,5/20/2024,11:59,PRINTING,,10,39.83,,0,39.83,Cash,16,,Morning,
+SES-0096,CUST-040,5/21/2024,7:35,Scanning,62,10,10.33,Regular,,10.33,Credit Card,8,5,Morning,Completed
+SES-0097,CUST-064,3/15/2024,15:26,Downloading,262,,87.33,Member,0.1,78.6,GCash,0,18,Afternoon,Incomplete
+SES-0098,CUST-019,4/8/2024,13:58,Video Streaming,275,,91.67,Student,0.05,,GCash,0,9,,Completed
+SES-0099,CUST-054,3/28/2024,,Gaming,159,25,66.25,Student,0.05,,Maya,,5,Afternoon,INCOMPLETE
+SES-0100,CUST-058,5/17/2024,22:22,PRINTING,297,10,49.5,Member,0.1,44.55,nan,18,7,,completed
+SES-0101,CUST-031,5/26/2024,19:14,Downloading,,20,75,,0,75,Maya,0,,Evening,Incomplete
+SES-0102,CUST-050,6/18/2024,11:31,GAMING,79,25,32.92,Student,0.05,31.27,Maya,0,15,Morning,
+SES-0103,CUST-013,5/14/2024,,Online Class,88,15,,Member,0.1,19.8,GCash,0,16,Evening,completed
+SES-0104,CUST-034,3/27/2024,19:41,Gaming,183,25,76.25,Student,0.05,72.44,,0,16,Evening,completed
+SES-0105,CUST-070,1/10/2024,9:15,Online Class,162,15,40.5,Regular,0,40.5,Cash,0,4,Morning,INCOMPLETE
+SES-0106,CUST-013,4/23/2024,12:44,printing,29,10,4.83,Member,0.1,4.35,Cash,2,12,Afternoon,Completed
+SES-0107,CUST-048,4/20/2024,11:15,,,20,75,Student,0.05,71.25,GCash,0,6,Morning,Completed
+SES-0108,CUST-011,6/5/2024,19:39,,,15,,Member,0.1,,GCash,0,15,Evening,Completed
+SES-0109,CUST-033,4/27/2024,,Gaming,253,25,105.42,Member,,94.88,,0,15,Afternoon,
+SES-0110,CUST-045,5/30/2024,16:40,Scanning,,10,23.83,Member,0.1,21.45,GCash,15,16,Afternoon,Incomplete
+SES-0111,CUST-014,3/1/2024,19:36,PRINTING,166,10,27.67,,0,27.67,Credit Card,10,1,Evening,Completed
+SES-0112,CUST-073,6/24/2024,8:58,Video Streaming,269,20,89.67,,,80.7,GCash,,8,Morning,Completed
+SES-0113,CUST-025,6/7/2024,15:43,DOWNLOADING,85,20,28.33,Student,0.05,26.91,Cash,,10,Afternoon,
+SES-0114,CUST-057,1/9/2024,18:46,,61,15,15.25,Member,,13.72,Maya,0,,Evening,Incomplete
+SES-0115,CUST-026,2/3/2024,18:33,Video Streaming,154,20,,Regular,0,51.33,Maya,0,10,Evening,incomplete
+SES-0116,CUST-044,1/30/2024,21:04,Browsing,130,,32.5,Student,0.05,,,,3,,
+SES-0117,CUST-051,1/4/2024,,Gaming,247,,102.92,Member,0.1,92.63,nan,0,12,Afternoon,Incomplete
+SES-0118,CUST-014,6/21/2024,14:30,Gaming,182,25,75.83,Student,,,GCash,0,15,Afternoon,Completed
+SES-0119,CUST-039,6/15/2024,20:07,Browsing,,15,9.5,Regular,0,9.5,Maya,,4,Evening,incomplete
+SES-0120,CUST-013,3/1/2024,11:24,,204,10,34,Member,0.1,30.6,GCash,18,4,Morning,INCOMPLETE
+SES-0121,CUST-063,6/6/2024,20:17,Gaming,204,25,85,Regular,,85,Credit Card,0,,Evening,incomplete
+SES-0122,CUST-047,1/26/2024,,Online Class,198,15,,Regular,0,,Credit Card,0,7,Evening,Completed
+SES-0123,CUST-016,4/26/2024,9:42,Browsing,25,15,6.25,Regular,0,6.25,nan,,5,,completed
+SES-0124,CUST-073,2/22/2024,,,298,20,99.33,Regular,,99.33,GCash,0,11,Morning,Completed
+SES-0125,CUST-019,6/1/2024,,Downloading,89,20,29.67,Regular,0,29.67,Maya,0,,Morning,Completed
+SES-0126,CUST-004,2/3/2024,7:22,Downloading,136,,45.33,Student,0.05,43.06,Maya,0,6,Morning,Completed
+SES-0127,CUST-034,1/14/2024,11:47,scanning,284,10,47.33,Student,0.05,,Cash,4,15,Morning,Incomplete
+SES-0128,CUST-047,5/11/2024,10:28,video streaming,128,20,,Student,0.05,,,0,15,Morning,
+SES-0129,CUST-004,1/16/2024,,,233,10,38.83,Member,0.1,,,4,,Evening,
+SES-0130,CUST-042,6/4/2024,11:04,Browsing,155,15,38.75,Student,,36.81,Maya,0,20,,Incomplete
+SES-0131,CUST-068,3/16/2024,21:32,video streaming,,20,,Regular,0,78.33,Cash,0,14,Evening,Completed
+SES-0132,CUST-058,2/28/2024,20:21,DOWNLOADING,247,20,,Member,0.1,74.1,,0,,Evening,Completed
+SES-0133,CUST-055,3/21/2024,15:23,browsing,257,15,64.25,Regular,0,64.25,Cash,0,3,Afternoon,Completed
+SES-0134,CUST-056,1/25/2024,18:51,,299,15,74.75,Regular,0,74.75,,0,14,Evening,Completed
+SES-0135,CUST-046,6/19/2024,20:55,Online Class,41,15,10.25,Member,0.1,9.22,Maya,0,4,Evening,completed
+SES-0136,CUST-074,5/9/2024,13:09,Online Class,261,15,65.25,Regular,0,65.25,Cash,0,18,,Completed
+SES-0137,CUST-048,1/30/2024,15:36,BROWSING,,15,58.5,,0.05,55.57,Cash,0,1,Afternoon,Completed
+SES-0138,CUST-024,3/10/2024,16:58,,194,10,32.33,Regular,,32.33,GCash,1,3,Afternoon,Incomplete
+SES-0139,CUST-019,6/11/2024,7:05,online class,,15,71.5,Regular,0,71.5,Credit Card,,,Morning,incomplete
+SES-0140,CUST-044,2/10/2024,18:19,Online Class,,15,45.25,Student,,42.99,Cash,0,,Evening,
+SES-0141,CUST-021,6/7/2024,8:43,Gaming,154,25,64.17,Member,0.1,57.75,Credit Card,,,Morning,Incomplete
+SES-0142,CUST-057,4/16/2024,15:13,Downloading,277,20,92.33,Regular,0,92.33,nan,0,4,Afternoon,INCOMPLETE
+SES-0143,CUST-037,6/22/2024,22:33,Online Class,172,15,43,Regular,,43,GCash,0,,,Incomplete
+SES-0144,CUST-008,1/2/2024,13:19,browsing,85,15,21.25,Member,0.1,19.12,Maya,,4,Afternoon,completed
+SES-0145,CUST-001,5/7/2024,20:11,BROWSING,209,15,52.25,Student,,,,0,3,,Completed
+SES-0146,CUST-051,1/11/2024,20:01,Scanning,54,10,9,Student,0.05,8.55,Credit Card,11,14,,INCOMPLETE
+SES-0147,CUST-038,1/30/2024,19:01,printing,,10,,Member,0.1,15.3,Maya,20,14,Evening,completed
+SES-0148,CUST-014,3/3/2024,20:37,SCANNING,283,10,47.17,Member,0.1,,Maya,3,8,Evening,completed
+SES-0149,CUST-043,2/13/2024,,online class,73,15,18.25,,0.05,,GCash,,12,Morning,
+SES-0150,CUST-019,3/1/2024,,printing,116,10,19.33,Student,0.05,18.36,GCash,,6,Morning,
+SES-0151,CUST-064,4/28/2024,21:43,Video Streaming,180,,60,,0.05,57,Maya,0,15,Evening,Completed
+SES-0152,CUST-009,4/30/2024,21:40,printing,155,,25.83,Regular,0,25.83,Maya,19,10,Evening,completed
+SES-0153,CUST-060,4/25/2024,8:03,printing,161,10,26.83,,0.05,25.49,Cash,,15,Morning,
+SES-0154,CUST-075,5/21/2024,8:28,Downloading,111,,37,,0.1,33.3,Credit Card,0,2,,COMPLETED
+SES-0155,CUST-058,1/27/2024,17:45,Gaming,273,25,113.75,Student,0.05,108.06,GCash,0,,Evening,Completed
+SES-0156,CUST-057,4/22/2024,12:23,Printing,159,10,26.5,Member,0.1,,Maya,,11,Afternoon,completed
+SES-0157,CUST-009,3/25/2024,10:35,ONLINE CLASS,212,15,53,Member,0.1,47.7,nan,0,11,Morning,
+SES-0158,CUST-011,5/29/2024,11:58,Printing,173,,28.83,Regular,0,,Cash,13,18,Morning,Completed
+SES-0159,CUST-049,6/13/2024,17:52,Browsing,284,15,,Regular,0,71,Credit Card,,1,Evening,completed
+SES-0160,CUST-047,3/20/2024,12:13,Printing,,10,43.83,Regular,0,43.83,GCash,7,3,,Completed
+SES-0161,CUST-038,1/26/2024,8:42,printing,82,,13.67,Member,0.1,12.3,,,6,Morning,
+SES-0162,CUST-080,2/12/2024,21:02,Scanning,201,10,33.5,Member,0.1,30.15,Maya,8,8,Evening,INCOMPLETE
+SES-0163,CUST-069,3/2/2024,16:51,DOWNLOADING,255,20,85,,0,,Maya,,15,Afternoon,Incomplete
+SES-0164,CUST-037,4/7/2024,20:10,,117,20,,,0.05,,GCash,0,2,Evening,completed
+SES-0165,CUST-062,4/5/2024,10:45,DOWNLOADING,279,20,93,Regular,0,93,Maya,0,6,,COMPLETED
+SES-0166,CUST-035,4/25/2024,11:53,scanning,61,10,10.17,Member,0.1,9.15,Maya,8,14,Morning,completed
+SES-0167,CUST-007,4/11/2024,18:15,Scanning,56,10,9.33,Regular,,9.33,nan,12,4,Evening,Completed
+SES-0168,CUST-043,2/7/2024,11:02,Printing,256,10,42.67,Student,,,Credit Card,5,,Morning,Incomplete
+SES-0169,CUST-001,1/21/2024,,Browsing,91,15,,Student,0.05,21.61,Credit Card,0,10,Morning,
+SES-0170,CUST-031,3/18/2024,10:03,BROWSING,229,15,57.25,Student,0.05,54.39,,0,4,Morning,completed
+SES-0171,CUST-064,6/1/2024,7:40,Video Streaming,,20,46,Student,0.05,43.7,,0,14,,
+SES-0172,CUST-001,6/6/2024,18:15,Video Streaming,228,20,76,Regular,0,76,Cash,,3,Evening,Completed
+SES-0173,CUST-068,5/19/2024,7:24,downloading,255,20,85,Regular,0,85,Credit Card,,,Morning,completed
+SES-0174,CUST-003,4/1/2024,9:22,Browsing,68,15,17,Student,0.05,16.15,Maya,0,2,Morning,COMPLETED
+SES-0175,CUST-046,5/19/2024,,online class,104,15,26,Student,0.05,24.7,Credit Card,0,6,,INCOMPLETE
+SES-0176,CUST-018,1/17/2024,21:02,Printing,118,10,19.67,Regular,0,,Cash,2,,Evening,Completed
+SES-0177,CUST-066,4/11/2024,22:16,gaming,112,25,46.67,Member,0.1,42,Maya,0,11,Evening,Completed
+SES-0178,CUST-035,2/1/2024,18:27,Scanning,240,10,,Member,0.1,36,GCash,13,16,Evening,Incomplete
+SES-0179,CUST-048,5/12/2024,15:51,Gaming,,25,96.67,Regular,,96.67,Credit Card,,18,Afternoon,
+SES-0180,CUST-038,3/23/2024,10:05,Printing,166,10,,Member,0.1,24.9,Credit Card,10,15,,
+SES-0181,CUST-045,4/24/2024,,downloading,195,20,65,Student,0.05,61.75,Credit Card,,2,Morning,Completed
+SES-0182,CUST-010,6/20/2024,,Video Streaming,96,20,,Regular,0,32,GCash,0,2,Evening,Incomplete
+SES-0183,CUST-017,1/18/2024,14:49,Online Class,,15,50.5,Member,0.1,45.45,Credit Card,0,,Afternoon,Completed
+SES-0184,CUST-020,6/22/2024,21:23,Printing,242,10,40.33,Student,,,GCash,3,13,Evening,Completed
+SES-0185,CUST-041,6/15/2024,15:15,,,25,11.67,Student,0.05,11.09,nan,0,17,Afternoon,Incomplete
+SES-0186,CUST-050,5/23/2024,,DOWNLOADING,148,20,49.33,Student,,46.86,Credit Card,0,20,Morning,COMPLETED
+SES-0187,CUST-037,6/26/2024,22:12,GAMING,84,25,35,Regular,,35,Credit Card,0,15,Evening,COMPLETED
+SES-0188,CUST-012,6/23/2024,17:42,PRINTING,48,10,,Student,0.05,7.6,Maya,18,6,Evening,
+SES-0189,CUST-023,4/2/2024,14:07,,86,15,21.5,Regular,0,,Credit Card,0,12,,Completed
+SES-0190,CUST-071,5/26/2024,18:29,Downloading,297,20,99,Regular,,99,,0,,Evening,COMPLETED
+SES-0191,CUST-051,5/2/2024,20:49,Scanning,52,,8.67,Member,0.1,7.8,,5,,Evening,Incomplete
+SES-0192,CUST-067,3/29/2024,11:56,downloading,297,20,99,Student,0.05,94.05,,0,14,Morning,Completed
+SES-0193,CUST-065,1/15/2024,10:33,browsing,170,15,42.5,,0,42.5,GCash,0,8,Morning,COMPLETED
+SES-0194,CUST-045,5/12/2024,,Gaming,,25,59.58,Regular,0,59.58,Maya,,,Afternoon,
+SES-0195,CUST-079,5/16/2024,9:32,ONLINE CLASS,,15,,Student,0.05,23.99,GCash,0,20,Morning,completed
+SES-0196,CUST-078,3/27/2024,8:52,Downloading,29,,9.67,Regular,,9.67,Cash,0,7,Morning,completed
+SES-0197,CUST-074,4/16/2024,7:31,Online Class,294,15,73.5,Member,0.1,,nan,0,8,Morning,Incomplete
+SES-0198,CUST-052,3/17/2024,21:04,Online Class,45,15,11.25,Regular,0,11.25,,,16,Evening,INCOMPLETE
+SES-0199,CUST-060,2/22/2024,17:38,BROWSING,175,15,43.75,Student,0.05,41.56,Maya,0,13,,completed
+SES-0200,CUST-017,4/4/2024,10:20,Browsing,253,15,63.25,Regular,0,63.25,Maya,0,8,Morning,incomplete
+SES-0096,CUST-040,5/21/2024,7:35,,62,10,10.33,Regular,0,10.33,Credit Card,8,5,Morning,Completed
+SES-0016,CUST-021,5/18/2024,7:38,Printing,265,10,44.17,Regular,0,44.17,Maya,1,,,
+SES-0031,CUST-031,3/8/2024,,,168,,42,Member,0.1,37.8,Maya,0,,Evening,
+SES-0159,CUST-049,6/13/2024,17:52,Browsing,284,15,71,Regular,0,71,Credit Card,0,1,Evening,completed
+SES-0129,CUST-004,1/16/2024,22:54,scanning,,10,38.83,Member,0.1,34.95,Credit Card,,3,Evening,completed
+SES-0116,CUST-044,1/30/2024,21:04,browsing,130,15,32.5,Student,,,Credit Card,0,,Evening,Completed
+SES-0070,CUST-023,5/13/2024,15:39,Downloading,290,20,96.67,Member,0.1,87,,0,19,Afternoon,INCOMPLETE
+SES-0171,CUST-064,6/1/2024,7:40,VIDEO STREAMING,138,20,,Student,0.05,43.7,nan,0,14,,Completed
+SES-0175,CUST-046,5/19/2024,17:52,online class,104,,,Student,0.05,24.7,Credit Card,0,6,Evening,Incomplete
+SES-0046,CUST-009,6/19/2024,17:39,printing,78,,13,Student,,,,10,,Evening,INCOMPLETE
+SES-0031,CUST-031,3/8/2024,19:08,,168,15,,Member,0.1,,,0,,Evening,
+SES-0173,CUST-068,5/19/2024,7:24,downloading,255,20,85,Regular,0,85,Credit Card,,,Morning,completed
+SES-0085,CUST-053,4/25/2024,22:18,Gaming,,25,55.42,Member,0.1,49.88,Maya,,3,Evening,Incomplete
+SES-0200,CUST-017,4/4/2024,10:20,Browsing,253,15,63.25,Regular,0,63.25,Maya,0,8,Morning,incomplete
+SES-0061,CUST-080,5/16/2024,7:58,,28,10,4.67,Student,0.05,4.44,Credit Card,3,15,Morning,
+SES-0156,CUST-057,4/22/2024,12:23,Printing,159,10,26.5,Member,0.1,,Maya,,11,Afternoon,completed
+SES-0046,CUST-009,6/19/2024,17:39,printing,,,13,Student,0.05,,Maya,10,11,Evening,incomplete
+SES-0183,CUST-017,1/18/2024,14:49,Online Class,,15,50.5,Member,0.1,45.45,Credit Card,0,,Afternoon,Completed
+SES-0010,CUST-009,2/24/2024,17:13,Online Class,,,,Member,0.1,60.75,Credit Card,0,9,Evening,COMPLETED
+SES-0197,CUST-074,4/16/2024,7:31,Online Class,294,15,73.5,Member,0.1,,nan,0,8,Morning,Incomplete
